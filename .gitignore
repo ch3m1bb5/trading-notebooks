@@ -1,0 +1,29 @@
+# Segredos — NUNCA publicar
+.env
+.env.*
+!.env.example
+
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+.cache/
+venv/
+.venv/
+node_modules/
+dist/
+
+# Logs, dados gerados e pacotes
+*.log
+logs/
+data/
+alert_log.csv
+*.zip
+
+# Saídas geradas pelo portfolio_agent
+portfolio_agent/curve.png
+portfolio_agent/weights.png
+portfolio_agent/*.pdf
+portfolio_agent/report.html
+portfolio_agent/relatorio_*.html
+*.egg-info/
+.pytest_cache/

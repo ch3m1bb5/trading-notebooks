@@ -1,0 +1,7 @@
+VERSAO PUBLICA — SEGURA PARA O GITHUB
+=====================================
+Nenhuma chave de API ou credencial pessoal esta neste projeto.
+Cada usuario usa as PROPRIAS chaves:
+  1. copie .env.example para .env
+  2. preencha com as suas chaves
+O .gitignore impede que o .env seja enviado ao GitHub.

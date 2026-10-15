@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portfolio-agent"
+version = "0.1.0"
+description = "Agente preditivo de portfólios com Streamlit+FastAPI"
+authors = [{name="Rodrigo Chemite Barbosa"}]
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["src"]

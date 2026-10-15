@@ -1,0 +1,15 @@
+data:
+  tickers: ["AAPL","MSFT","AMZN","GOOGL","META"]
+  start: "2018-01-01"
+  end: "2025-01-01"
+model:
+  model_type: "ridge"
+  lookback_days: 252
+  horizon_days: 21
+optimize:
+  long_only: true
+  max_weight: 0.2
+  rebalance: "M"
+  transaction_cost_bps: 2.0
+report:
+  output_pdf: "report.pdf"

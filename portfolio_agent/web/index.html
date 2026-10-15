@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Agente Preditivo de Portfólio (HTML)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/plotly.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <h1>📈 Agente Preditivo de Portfólio</h1>
+    <p>Modelagem preditiva + otimização para bolsa americana (HTML + FastAPI).</p>
+  </header>
+
+  <section class="card">
+    <h3>Parâmetros</h3>
+    <div class="grid">
+      <label>Tickers<br><input id="tickers" value="AAPL MSFT AMZN GOOGL META"></label>
+      <label>Data inicial<br><input id="start" type="date" value="2018-01-01"></label>
+      <label>Data final<br><input id="end" type="date"></label>
+      <label>Modelo<br>
+        <select id="model_type">
+          <option value="ridge">ridge</option>
+          <option value="random_forest">random_forest</option>
+        </select>
+      </label>
+      <label>Lookback (dias)<br><input id="lookback" type="number" value="252" min="126" step="21"></label>
+      <label>Horizonte (dias)<br><input id="horizon" type="number" value="21" min="5" max="63"></label>
+      <label>Rebalance<br>
+        <select id="rebalance">
+          <option value="M" selected>Mensal</option>
+          <option value="W">Semanal</option>
+        </select>
+      </label>
+      <label>Max Peso por ativo<br><input id="max_weight" type="number" value="0.2" min="0.05" max="1" step="0.05"></label>
+      <label>Custos (bps)<br><input id="tc" type="number" value="2" min="0" max="50"></label>
+      <label>Nome do PDF<br><input id="pdf" value="relatorio_portfolio.pdf"></label>
+    </div>
+    <div class="actions">
+      <button id="run">🚀 Rodar</button>
+      <button id="export_html">🧾 Exportar HTML</button>
+    </div>
+    <div id="status"></div>
+  </section>
+
+  <section class="card">
+    <h3>Métricas</h3>
+    <div id="metrics" class="grid"></div>
+  </section>
+
+  <section class="card">
+    <h3>Equity Curve</h3>
+    <div id="curve" style="width:100%;height:420px;"></div>
+  </section>
+
+  <section class="card">
+    <h3>Pesos por Rebalance</h3>
+    <div id="weights" style="width:100%;height:420px;"></div>
+  </section>
+
+  <footer>Gerado por Portfolio Agent – <span id="today"></span></footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
